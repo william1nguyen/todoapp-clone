@@ -1,0 +1,39 @@
+body {
+    background-image: url("./images/bg-desktop-light.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.checkbox-round {
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    border-radius: 100%;
+    vertical-align:-7px;
+    border: 2px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.checkbox-round:checked {
+    background-color:#720ad3;
+}
+
+.box {
+    margin: auto;
+    padding: 20px 50px 20px;
+    width: 30%;
+    height: 50%;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    border-color: gainsboro;
+    text-align: left;
+    font-size: larger;
+    color: black;
+    background-color: white;
+}
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="margin-top: 40px;"> 
+        <div class="box" style="border: 0px; background-color:transparent">
+            <div style="width: 100%; height:100%; overflow:hidden">
+                <h1 style="border: 10px; float:left; width:90%; font-size:50px">T O D O</h1>
+                <img src="./images/icon-moon.svg" style="float: right; width:10%; transform:scale(0.7)">
+            </div>
+        </div>
+        <div style="margin-bottom: 20px;" class="box">
+            <input type="checkbox" class="checkbox-round"><input type="text" style="border: 0px; font-size:larger; width:85%; height:40px" placeholder="Create a new todo...">
+        </div>
+        <div class="box">
+            <input type="checkbox" class="checkbox-round">a
+        </div>
+        <div class="box">
+            <input type="checkbox" class="checkbox-round">b
+        </div>
+        <div class="box">
+            <input type="checkbox" class="checkbox-round">c
+        </div>
+        <div class="box">
+            <input type="checkbox" class="checkbox-round">d            
+        </div>
+        <div class="box">
+            <input type="checkbox" class="checkbox-round">e           
+        </div>
+        <div class="box">
+            <input type="checkbox" class="checkbox-round">f           
+        </div>
+        <div class="box">
+            <input type="checkbox" class="checkbox-round">g
+        </div>
+        <div style="padding-top:20px; padding-bottom:20px; font-size:small" class="box">
+            <div id="widget" style="height:100%; width:100%; overflow:hidden">
+                <div style="float:left; width:30%; color:gray;">
+                    5 minutes left
+                </div>
+                <a href="#All">
+                    <div id="allTask" style="float:left; width:7%; color:gray;">        
+                        <strong>All</strong>    
+                    </div>
+                </a>
+                <a href="#Active">
+                    <div id="activeTask" style="float:left; width:13%; color:gray;">
+                        <strong>Active</strong>
+                    </div>
+                </a>
+                <a href="#Completed">
+                    <div id="completeTask" style="float:left; width:20%; color:gray;">
+                        <strong>Completed</strong>
+                    </div>
+                </a>
+                <a href="#Clear">
+                    <div id="clearButton" style="float:right; width:30%; color:gray;">
+                        Clear Completed
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
