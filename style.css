@@ -22,29 +22,16 @@ body {
 
 .checkbox-round:checked {
     background: linear-gradient(150deg,#00FFFF 30%, rgb(146, 88, 146) 70%);
+    text-decoration: line-through;
 }
 
-.checked {
+ul li.checked {
     background: #888;
     color: #fff;
     text-decoration: line-through;
-  }
-
-.title {
-    margin: auto;
-    padding: 20px 50px 20px;
-    width: 30%;
-    height: 50%;
-    border: 0.5px solid black;
-    border-radius: 5px;
-    border-color: gainsboro;
-    text-align: left;
-    font-size: larger;
-    color: black;
-    background-color: white;
 }
 
-.box {
+ul li {
     margin: auto;
     padding: 20px 50px 20px;
     width: 30%;
@@ -56,4 +43,10 @@ body {
     font-size: larger;
     color: black;
     background-color: white;
+    list-style-type: none;
+}
+
+ul li:hover {
+    color: white;
+    background-color: #312d3e';
 }

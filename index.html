@@ -8,73 +8,81 @@
 <body>
     <script src="./script.js"></script>
     <div style="margin-top: 40px;"> 
-        <div class="title"  style="border: 0px; background-color:transparent">
-            <div style="width: 100%; height:100%; overflow:hidden">
-                <h1 style="color:whitesmoke; border: 10px; float:left; width:90%; font-size:50px">T O D O</h1>
-                <button type="button" 
-                    style="float: right; width:10%; border:0px; background-color:transparent"
-                    onclick="changeTheme()">
-                    <img id="theme-icon" src="./images/icon-moon.svg" alt="buttonpng">
-                </button>
-            </div>
-        </div>
-        <div style="margin-bottom: 20px;" class="box">
-            <input type="checkbox" class="checkbox-round">
-            <input type="text" style=
-            "border: 0px; 
-            font-size:larger; 
-            width:85%; 
-            height:40px;
-            background-color:inherit" placeholder="Create a new todo...">
-        </div>
-        <div class="box">
-            <input type="checkbox" class="checkbox-round">a
-        </div>
-        <div class="box">
-            <input type="checkbox" class="checkbox-round">b
-        </div>
-        <div class="box">
-            <input type="checkbox" class="checkbox-round">c
-        </div>
-        <div class="box">
-            <input type="checkbox" class="checkbox-round">d            
-        </div>
-        <div class="box">
-            <input type="checkbox" class="checkbox-round">e           
-        </div>
-        <div class="box">
-            <input type="checkbox" class="checkbox-round">f           
-        </div>
-        <div class="box">
-            <input type="checkbox" class="checkbox-round">g
-        </div>
-        <div style="padding-top:20px; padding-bottom:20px; font-size:small" class="box">
-            <div id="widget" style="height:100%; width:100%; overflow:hidden">
-                <div style="float:left; width:30%; color:gray;">
-                    5 minutes left
+        <ul>
+            <li  style="border: 0px; background-color:transparent">
+                <div style="width: 100%; height:100%; overflow:hidden">
+                    <h1 style="color:whitesmoke; border: 10px; float:left; width:90%; font-size:50px">T O D O</h1>
+                    <button type="button" 
+                        style="float: right; width:10%; border:0px; background-color:transparent"
+                        onclick="changeTheme()">
+                        <img id="theme-icon" src="./images/icon-moon.svg" alt="buttonpng">
+                    </button>
                 </div>
-                <a href="#All">
-                    <div id="allTask" style="float:left; width:7%; color:gray;">        
-                        <strong>All</strong>    
+            </li>
+        </ul>
+        <ul>
+            <li onkeydown="if (event.keyCode == 13) addEvent()">
+                <input id='input' type="text" style=
+                "border: 0px; 
+                font-size:larger; 
+                width:85%; 
+                height:40px;
+                background-color:inherit" placeholder="Create a new todo...">
+                </button>
+            </li>
+        </ul>
+        <ul id="task-list">
+            <li>
+                <input id="task1" type="checkbox" class="checkbox-round" onclick="completedEvent(1)">a
+            </li>
+            <li>
+                <input id="task2" type="checkbox" class="checkbox-round" onclick="completedEvent(2)">b
+            </li>
+            <li>
+                <input id="task3" type="checkbox" class="checkbox-round" onclick="completedEvent(3)">c
+            </li>
+            <li>
+                <input id="task4" type="checkbox" class="checkbox-round" onclick="completedEvent(4)">d
+            </li>
+            <li>
+                <input id="task5" type="checkbox" class="checkbox-round" onclick="completedEvent(5)">e
+            </li>
+            <li>
+                <input id="task6" type="checkbox" class="checkbox-round" onclick="completedEvent(6)">f
+            </li>
+            <li>
+                <input id="task7" type="checkbox" class="checkbox-round" onclick="completedEvent(7)">g
+            </li>
+        </ul>
+        <ul>
+            <li style="padding-top:20px; padding-bottom:20px; font-size:small">
+                <div id="widget" style="height:100%; width:100%; overflow:hidden">
+                    <div style="float:left; width:30%; color:gray;">
+                        5 minutes left
                     </div>
-                </a>
-                <a href="#Active">
-                    <div id="activeTask" style="float:left; width:13%; color:gray;">
-                        <strong>Active</strong>
-                    </div>
-                </a>
-                <a href="#Completed">
-                    <div id="completeTask" style="float:left; width:20%; color:gray;">
-                        <strong>Completed</strong>
-                    </div>
-                </a>
-                <a href="#Clear">
-                    <div id="clearButton" style="float:right; width:30%; color:gray;">
-                        Clear Completed
-                    </div>
-                </a>
-            </div>
-        </div>
+                    <a href="#All" onclick="displayAllEvent()">
+                        <div id="allTask" style="float:left; width:7%; color:gray;">        
+                            <strong>All</strong>    
+                        </div>
+                    </a>
+                    <a href="#Active" onclick="displayAllActive()">
+                        <div id="activeTask" style="float:left; width:13%; color:gray;">
+                            <strong>Active</strong>
+                        </div>
+                    </a>
+                    <a href="#Completed" onclick="displayAllCompleted()">
+                        <div id="completeTask" style="float:left; width:20%; color:gray;">
+                            <strong>Completed</strong>
+                        </div>
+                    </a>
+                    <a href="#Clear" onclick="removeAllCompleted()">
+                        <div id="clearButton" style="float:right; width:30%; color:gray;">
+                            Clear Completed
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
