@@ -1,88 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Todo App</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <script src="./script.js"></script>
-    <div style="margin-top: 40px;"> 
-        <ul>
-            <li  style="border: 0px; background-color:transparent">
-                <div style="width: 100%; height:100%; overflow:hidden">
-                    <h1 style="color:whitesmoke; border: 10px; float:left; width:90%; font-size:50px">T O D O</h1>
-                    <button type="button" 
-                        style="float: right; width:10%; border:0px; background-color:transparent"
-                        onclick="changeTheme()">
-                        <img id="theme-icon" src="./images/icon-moon.svg" alt="buttonpng">
-                    </button>
-                </div>
-            </li>
-        </ul>
-        <ul>
-            <li onkeydown="if (event.keyCode == 13) addEvent()">
-                <input id='input' type="text" style=
-                "border: 0px; 
-                font-size:larger; 
-                width:85%; 
-                height:40px;
-                background-color:inherit" placeholder="Create a new todo...">
-                </button>
-            </li>
-        </ul>
-        <ul id="task-list">
-            <li>
-                <input id="task1" type="checkbox" class="checkbox-round" onclick="completedEvent(1)">a
-            </li>
-            <li>
-                <input id="task2" type="checkbox" class="checkbox-round" onclick="completedEvent(2)">b
-            </li>
-            <li>
-                <input id="task3" type="checkbox" class="checkbox-round" onclick="completedEvent(3)">c
-            </li>
-            <li>
-                <input id="task4" type="checkbox" class="checkbox-round" onclick="completedEvent(4)">d
-            </li>
-            <li>
-                <input id="task5" type="checkbox" class="checkbox-round" onclick="completedEvent(5)">e
-            </li>
-            <li>
-                <input id="task6" type="checkbox" class="checkbox-round" onclick="completedEvent(6)">f
-            </li>
-            <li>
-                <input id="task7" type="checkbox" class="checkbox-round" onclick="completedEvent(7)">g
-            </li>
-        </ul>
-        <ul>
-            <li style="padding-top:20px; padding-bottom:20px; font-size:small">
-                <div id="widget" style="height:100%; width:100%; overflow:hidden">
-                    <div style="float:left; width:30%; color:gray;">
-                        5 minutes left
+    <div class="image-container"></div>
+    <div class="container">
+        <div class="text-container">
+            <div class="name">TODO</div>
+            <div class="mode">
+                <img src="./images/icon-sun.svg" alt="">
+            </div>
+            <form action="">
+                <div class="input-container">
+                    <div class="circle">
+                        <img src="./images/icon-check.svg" alt="">
+                        <div class="insider"></div>
                     </div>
-                    <a href="#All" onclick="displayAllEvent()">
-                        <div id="allTask" style="float:left; width:7%; color:gray;">        
-                            <strong>All</strong>    
-                        </div>
-                    </a>
-                    <a href="#Active" onclick="displayAllActive()">
-                        <div id="activeTask" style="float:left; width:13%; color:gray;">
-                            <strong>Active</strong>
-                        </div>
-                    </a>
-                    <a href="#Completed" onclick="displayAllCompleted()">
-                        <div id="completeTask" style="float:left; width:20%; color:gray;">
-                            <strong>Completed</strong>
-                        </div>
-                    </a>
-                    <a href="#Clear" onclick="removeAllCompleted()">
-                        <div id="clearButton" style="float:right; width:30%; color:gray;">
-                            Clear Completed
-                        </div>
-                    </a>
+                    <input type="text" placeholder="Your todo...">
                 </div>
-            </li>
-        </ul>
+            </form>
+            <div class="todo-list">
+                <div class="task draggable" draggable="true">
+                    <div class="circle">
+                        <img src="./images/icon-check.svg" alt="">
+                        <div class="insider"></div>
+                    </div>
+                    <div class="task-name">somethings</div>
+                    <div class="cross-mark">
+                        <img src="./images/icon-cross.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="todo-list bar">
+                <div class="status-bar">
+                    <div class="item-left">
+                        <div class="center-text"><span>0</span> item left</div>
+                    </div>
+                    <div class="status-options">
+                        <div class="option">
+                            <div class="center-text">All</div>
+                        </div>
+                        <div class="option">
+                            <div class="center-text">Active</div>
+                        </div>
+                        <div class="option">
+                            <div class="center-text">Completed</div>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="center-text">Clear Completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
+<script src="./script.js"></script>
+
 </html>

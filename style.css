@@ -1,52 +1,237 @@
+:root {
+    --bright-blue: hsl(220, 98%, 61%);
+    --dark-blue: hsl(235, 21%, 11%);
+    --dark-desaturated-blue : hsl(235, 24%, 19%);
+    --cross: #777A92;
+    --text-color: hsl(233, 6%, 70%);
+    --brighter: white;
+    --circle-color: rgba(255, 255, 255, 0.11);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Josefin Sans', sans-serif;
+    transition: 0.1s;
+}
+
 body {
-    background-image: url("./images/bg-desktop-light.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: white;
-    font-family:'Courier New', Courier, monospace;
+    background-color: var(--dark-blue);
+    min-height: 100vh;
 }
 
-.checkbox-round {
-    width: 2em;
-    height: 2em;
-    background-color: white;
-    border-radius: 100%;
-    vertical-align:-7px;
-    border: 2px solid #ddd;
-    appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    cursor: pointer;
-    margin-right: 20px;
+.image-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    background-image: url("./images/bg-desktop-dark.jpg");
+    background-position: center;
+    background-size: cover;
+    transition: 0.25s;
 }
 
-.checkbox-round:checked {
-    background: linear-gradient(150deg,#00FFFF 30%, rgb(146, 88, 146) 70%);
-    text-decoration: line-through;
+.container {
+    position: relative;
+    top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
+.text-container {
+    position: relative;
+    display: inline;
+    height: 0px;
+    width: 475px;
+    top: 10%;
 }
 
-ul li {
-    margin: auto;
-    padding: 20px 50px 20px;
-    width: 30%;
-    height: 50%;
-    border: 0.5px solid black;
+.text-container .name {
+    position: relative;
+    color: rgba(255, 255, 255, 0.884);
+    font-size: 35px;
+    letter-spacing: 10px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.text-container .mode {
+    position: absolute;
+    z-index: 10000;
+    right: 0px;
+    top: 0px;
+}
+
+.text-container input {
+    width: 475px;
+    height: 100%;
+    background-color: var(--dark-desaturated-blue);
+    padding: 10px 60px;
+    border: none;
     border-radius: 5px;
-    border-color: gainsboro;
-    text-align: left;
-    font-size: larger;
-    color: black;
-    background-color: white;
-    list-style-type: none;
+    color: var(--text-color);
+    font-size: 18px;
+    outline: none;
 }
 
-ul li:hover {
-    color: white;
-    background-color: #312d3e';
+.text-container .circle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--circle-color);
+}
+
+.text-container .circle .insider.active {
+    background: linear-gradient( 120deg, hsl( 192 , 100% , 67% ) , hsl( 280, 87% , 65% )  );
+}
+
+.text-container .circle .insider {
+    position: absolute;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--dark-desaturated-blue);
+    border-radius: 50%;
+    z-index: 1000000;
+}
+
+.text-container .circle:hover {
+    background: linear-gradient( 120deg , hsl( 192 , 100% , 67% ) , hsl( 280, 87% , 65% ) );
+}
+
+.text-container .circle img {
+    opacity: 0; /* modify transparent */
+    z-index: 10000000; /* z-index1 > z-index2 -> 1 appear first */
+}
+
+.text-container .circle img.active {
+    opacity: 1;
+}
+
+.text-container form {
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.text-container form .input-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.text-container .todo-list {
+    position: relative;
+    top: 30px;
+    border-radius: 5px;
+    width: 475px;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.384);
+}
+
+.text-container .todo-list .task {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: var(--dark-desaturated-blue);
+    padding: 10px 60px;
+    color: #777A92;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.096);
+}
+
+.text-container .todo-list .task .task-name {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color);
+    font-size: 19px;
+}
+
+.text-container .todo-list .task .task-name::first-letter {
+    text-transform: uppercase;
+}
+
+.text-container .todo-list .task .task-name.active {
+    color: var(--cross);
+    text-decoration: line-through;
+}
+
+.text-container .todo-list .status-bar {
+    position: relative;
+    background-color: var(--dark-desaturated-blue);
+    width: 100%;
+    height: 50px;
+    color: var(--text-color);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    text-align: center;
+    font-size: 15px;
+}
+
+.text-container .todo-list .status-bar .center-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.text-container .todo-list .status-bar .status-options {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.text-container .todo-list .status-bar .status-options .option {
+    position: relative;
+    display: inline;
+    margin-right: 10px;
+    left: -10px;
+    cursor: pointer;
+    opacity: .6;
+}
+
+.text-container .todo-list .status-bar .clear {
+    position: relative;
+    right: 20px;
+    cursor: pointer;
+    opacity: .6;
+}
+
+.text-container .todo-list .status-bar .status-options .option:hover,
+.text-container .todo-list .status-bar .clear:hover {
+    color: aquas;
+    opacity: 1;
+}
+
+.text-container .todo-list .task .cross-mark {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.text-container .todo-list .task:hover .cross-mark {
+    opacity: 1;
+}
+
+.blue-text {
+    color: var(--bright-blue);
 }
